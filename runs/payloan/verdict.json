@@ -1,0 +1,76 @@
+{
+  "target": "payloan",
+  "repo": "Arbab-Mustafa/Payloan",
+  "commit": "7bd477c1c60df4189f957f7aa4776c9429067f26",
+  "live": "https://payloan.vercel.app",
+  "host": "vercel",
+  "route": "/login",
+  "check_sha256": "11a9bd62068c8f9b3424c255475abefbf59333d6441fd334a3d1001155e2d3b1",
+  "started": "2026-11-26T16:00:03.947Z",
+  "rounds": [
+    {
+      "round": 1,
+      "agent": "claude",
+      "unavailable": true,
+      "files": [],
+      "check_untouched": true,
+      "kane": {
+        "status": "skipped",
+        "summary": "agent unavailable"
+      }
+    },
+    {
+      "round": 2,
+      "agent": "codex",
+      "files": [
+        "vercel.json"
+      ],
+      "check_untouched": true,
+      "kane": {
+        "code": 0,
+        "status": "passed",
+        "summary": "Opened the app and confirmed its home page displayed normal lending content.\nNavigated directly to the shared login link at http://127.0.0.1:4700/login.\nThe login page loaded successfully with email and password fields and a Sign In button, without a not-found error page.",
+        "reason": "Objective completed",
+        "duration": 125.1,
+        "file": "runs/payloan/04-round2-kane-recheck.ndjson",
+        "host_log": {
+          "requested": 1,
+          "statuses": [
+            200
+          ],
+          "ok": true,
+          "rule": "vercel.json rewrite /(.*) -> /index.html"
+        },
+        "kane_status": "passed"
+      }
+    }
+  ],
+  "live_result": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The browser automation session ended unexpectedly during screenshot capture, so the run could not inspect the requested login page.\nStabilize the browser/session lifecycle and rerun the direct navigation to the payloan login URL. Record the final URL and page content before taking the screenshot.",
+    "reason": "Screenshot failed: TargetClosedError: screenshot: Target page, context or browser has been closed",
+    "duration": 74.2,
+    "file": "runs/payloan/01-kane-live.ndjson"
+  },
+  "local_before": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The site is not set up to return the app for a direct visit to the login address, so the host returns its own not-found page before the login screen can load.\nConfigure the site to serve the app for direct routes such as /login, then verify that opening or refreshing that link displays the sign-in form.\nevidence: http_error_response: GET http://127.0.0.1:4700/login -> 404 body: <!doctype html><title>404: NOT_FOUND</title><h1>404: NOT_FOUND</h1><p>Code:\nevidence: objective_contradiction: the page shows the app's login screen (a sign-in form) — expected: true | observed: {{login_screen_sign_in_form_check}}",
+    "reason": "Checkpoint assertion failed: \"the page shows the app's login screen (a sign-in form)\"",
+    "duration": 70.9,
+    "file": "runs/payloan/02-kane-local-before.ndjson",
+    "host_log": {
+      "requested": 1,
+      "statuses": [
+        404
+      ],
+      "ok": false,
+      "rule": "no vercel.json"
+    },
+    "kane_status": "failed"
+  },
+  "fixed": true,
+  "verdict": "fixed in 2 round(s)",
+  "finished": "2026-11-26T16:05:40.738Z"
+}

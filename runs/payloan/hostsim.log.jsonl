@@ -1,0 +1,16 @@
+{"ts":"2026-11-26T16:01:33.504Z","path":"/","status":200,"why":"index from live deployment"}
+{"ts":"2026-11-26T16:01:33.583Z","path":"/assets/index-dQsFonEm.css","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:01:34.156Z","path":"/assets/index-tWrUFFNt.js","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:01:34.198Z","path":"/favicon.ico","status":200,"why":"file from repo public/"}
+{"ts":"2026-11-26T16:01:38.728Z","path":"/","status":200,"why":"index from live deployment"}
+{"ts":"2026-11-26T16:01:38.739Z","path":"/assets/index-dQsFonEm.css","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:01:38.739Z","path":"/assets/index-tWrUFFNt.js","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:02:13.216Z","path":"/login","status":404,"why":"no vercel.json"}
+{"ts":"2026-11-26T16:04:23.859Z","path":"/","status":200,"why":"index from live deployment"}
+{"ts":"2026-11-26T16:04:23.892Z","path":"/","status":200,"why":"index from live deployment"}
+{"ts":"2026-11-26T16:04:23.903Z","path":"/assets/index-dQsFonEm.css","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:04:23.905Z","path":"/assets/index-tWrUFFNt.js","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:04:24.444Z","path":"/favicon.ico","status":200,"why":"file from repo public/"}
+{"ts":"2026-11-26T16:04:36.943Z","path":"/login","status":200,"why":"vercel.json rewrite /(.*) -> /index.html"}
+{"ts":"2026-11-26T16:04:36.953Z","path":"/assets/index-dQsFonEm.css","status":200,"why":"asset from live deployment"}
+{"ts":"2026-11-26T16:04:36.954Z","path":"/assets/index-tWrUFFNt.js","status":200,"why":"asset from live deployment"}
