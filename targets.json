@@ -1,0 +1,13 @@
+[
+  {"name": "payloan", "repo": "Arbab-Mustafa/Payloan", "live": "https://payloan.vercel.app", "host": "vercel", "route": "/login", "screen": "login screen (a sign-in form)", "clone": ".targets/payloan"},
+  {"name": "financial-compass", "repo": "sirmakau/my-financial-compass", "live": "https://my-financial-ledger.vercel.app", "host": "vercel", "route": "/auth", "screen": "sign-in / sign-up screen", "clone": ".targets/financial-compass"},
+  {"name": "study-zen", "repo": "prajwal07-pro/study-zen-vision-main", "live": "https://study-zen-vision-main.vercel.app", "host": "vercel", "route": "/focus", "screen": "focus mode screen", "note": "deployment is down: home page also 404"},
+  {"name": "ib-electric-store", "repo": "maalikzohaib/ib-electric-store", "live": "https://ib-electric-store.vercel.app", "host": "vercel", "route": "/shop", "screen": "shop / product listing screen", "note": "deployment is down: home page also 404"},
+  {"name": "nido-erp", "repo": "thenameisshambhulinga/ERP-Platform-", "live": "https://nido-phase-4.vercel.app", "host": "vercel", "route": "/login", "screen": "login screen (a sign-in form)", "clone": ".targets/nido-erp"},
+  {"name": "heal-sphere", "repo": "pawaspy/VitaReach", "live": "https://heal-sphere.vercel.app", "host": "vercel", "route": "/login", "screen": "login screen"},
+  {"name": "physicalmediavault", "repo": "thamarakandabada/physicalmediavault", "live": "https://physicalmedia.thamara.co.uk", "host": "other", "route": "/stats", "screen": "stats screen"},
+  {"name": "scriptforge", "repo": "3h0ll7/scriptforge-ai", "live": "https://scriptforgeaii.lovable.app", "host": "lovable", "route": "/pricing", "screen": "pricing screen"},
+  {"name": "guest-it", "repo": "karthik558/GuestIT-Portal", "live": "https://guest-it.vercel.app", "host": "vercel", "route": "/login", "screen": "login screen"},
+  {"name": "kairos", "repo": "yenom4/Kairos-website", "live": "https://kairos-website-virid.vercel.app", "host": "vercel", "route": "/about", "screen": "about screen"},
+  {"name": "careconnect", "repo": "gsm-fullweb/careconnect", "live": "https://careconnect-cuidadores.vercel.app", "host": "vercel", "route": "/planos", "screen": "plans screen"}
+]
