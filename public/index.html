@@ -57,6 +57,12 @@
   .dare .meta { font:12px/1.5 ui-monospace,Menlo,monospace; color:var(--soft); margin-top:5px; } .dare .meta b { color:var(--ink); }
   .dare .ruling { margin-top:8px; padding-left:12px; border-left:2px solid var(--hair); font-size:14.5px; color:var(--soft); white-space:pre-wrap; overflow-wrap:anywhere; }
   .pts { font:700 22px/1 ui-monospace,Menlo,monospace; color:var(--red); display:block; margin-top:8px; }
+  .how { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-bottom:1px solid var(--rule); }
+  .how div { padding:14px 14px 14px 0; border-right:1px solid var(--hair); margin-right:14px; } .how div:last-child { border-right:0; margin-right:0; }
+  .how b { font:700 11px/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; color:var(--red); display:block; margin-bottom:6px; }
+  .how strong { display:block; font-size:18px; line-height:1.2; margin-bottom:3px; } .how span { color:var(--soft); font-size:14px; }
+  @media (max-width:860px) { .how { grid-template-columns:1fr 1fr; } .how div { border-bottom:1px solid var(--hair); } }
+  .pass { color:var(--green); font-weight:700; } .fail { color:var(--red); font-weight:700; } .warn { color:var(--amber); font-weight:700; }
   .empty { padding:18px 0; color:var(--soft); font-style:italic; }
   footer { margin-top:44px; padding-top:12px; border-top:3px double var(--rule); color:var(--soft); font-size:13px; }
 </style>
@@ -67,6 +73,13 @@
     <h1>Dare<i>.</i><br>Board</h1>
     <p>Live apps that strangers shipped with AI builders. You say how one breaks. Kane CLI goes and looks, and rules.</p>
   </header>
+
+  <div class="how">
+    <div><b>STEP 1</b><strong>You dare</strong><span>Pick a live app and say, in plain English, how you think it breaks.</span></div>
+    <div><b>STEP 2</b><strong>Kane looks</strong><span>Kane CLI opens the real site in a browser and tries exactly that.</span></div>
+    <div><b>STEP 3</b><strong>Kane rules</strong><span>Real bug: you score. App survived: no points. The raw run is public.</span></div>
+    <div><b>STEP 4</b><strong>Agent fixes</strong><span>For apps with a public repo, a coding agent patches it and Kane checks again.</span></div>
+  </div>
 
   <div class="strip" id="strip"></div>
 
@@ -87,8 +100,15 @@
   <h2>Docket <small>newest first, every ruling links to Kane's raw run</small></h2>
   <div id="dares"></div>
 
+  <h2>Fixed and re-checked <small>Kane fails the live app, an agent patches the repo, Kane checks the patch</small></h2>
+  <div class="wrap"><table id="fixes"></table></div>
+
   <h2>Bug database <small>run it on your own app: node dare.mjs audit &lt;url&gt;</small></h2>
   <div class="wrap"><table id="catalog"></table></div>
+
+  <h2>From the index <small>live apps whose host answers 404 for an unknown address (HTTP check, not Kane)</small></h2>
+  <div class="wrap"><table id="sample"></table></div>
+  <div class="note" style="margin-top:8px">Showing 14. The full list is INDEX.md in the repo.</div>
 
   <footer>Rulings are single Kane runs and can be wrong. Index figures are a plain HTTP check, not Kane. None of these apps are ours.</footer>
 </main>
@@ -113,6 +133,10 @@ async function load() {
     <div><blockquote>&ldquo;${esc(d.dare)}&rdquo;</blockquote>
     <div class="meta"><b>${esc(d.player)}</b> v. <b>${esc(d.app)}</b>${d.first_blood ? ' · first bug on this app' : ''}${d.kane ? ` · <a href="/${esc(d.kane.file)}" target="_blank">raw Kane run</a>` : ''}</div>
     ${d.kane?.summary ? `<div class="ruling">${esc(d.kane.summary.split('\nevidence:')[0])}</div>` : ''}</div></div>`).join('') || '<div class="empty">Nothing filed yet.</div>';
+  $('fixes').innerHTML = '<tr><th>App</th><th>Page</th><th>Kane on the live site</th><th>Agent</th><th>Changed</th><th>Kane after the fix</th><th></th></tr>' +
+    (b.fixes || []).map((f) => `<tr><td><a href="https://github.com/${esc(f.repo)}" target="_blank" rel="noopener">${esc(f.repo)}</a></td><td>${esc(f.route)}</td><td class="fail">${esc(f.before)}</td><td>${esc(f.agent || '')}</td><td>${esc(f.files.join(', '))}</td><td class="${f.after === 'passed' ? 'pass' : 'warn'}">${esc(f.after)}</td><td><a href="${esc(f.evidence)}" target="_blank" rel="noopener">evidence</a></td></tr>`).join('');
+  $('sample').innerHTML = '<tr><th>Repo</th><th>Live</th><th class="n">Home</th><th class="n">Unknown address</th></tr>' +
+    (b.sample || []).map((o) => `<tr><td><a href="${esc(o.repo_url)}" target="_blank" rel="noopener">${esc(o.repo)}</a></td><td><a href="${esc(o.live)}" target="_blank" rel="noopener">${esc(o.live.replace('https://', ''))}</a></td><td class="n">${o.home_status}</td><td class="n fail">${o.unknown_path_status}</td></tr>`).join('');
   $('catalog').innerHTML = '<tr><th>ID</th><th>Bug</th><th>Run through Kane</th><th>Known fix</th></tr>' +
     (b.catalog || []).map((c) => `<tr><td><b>${esc(c.id)}</b></td><td><b>${esc(c.name)}</b><span class="why">${esc(c.why)}</span></td><td>${c.exercised ? 'yes' : 'not yet'}</td><td>${c.fix ? esc(c.fix.summary) + ' Confirmed on ' + c.fix.confirmed_by_kane_on.length + ' apps.' : '&mdash;'}</td></tr>`).join('');
 }

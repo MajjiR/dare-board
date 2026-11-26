@@ -77,11 +77,17 @@ function addDare(player, appName, text) {
 
 const readJ = (f, d) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')); } catch { return d; } };
 function indexStats() { const ix = readJ('data/index.json', []); const up = ix.filter((o) => o.home_status === 200); return { total: ix.length, up: up.length, host404: up.filter((o) => o.unknown_path_status === 404).length }; }
+function fixes() {
+  return ['payloan', 'financial-compass', 'nido-erp'].map((n) => readJ(`runs/${n}/verdict.json`, null)).filter(Boolean).map((v) => {
+    const done = v.rounds.filter((r) => !r.unavailable); const last = done.at(-1);
+    return { repo: v.repo, live: v.live, route: v.route, before: v.live_result?.status, agent: last?.agent, files: last?.files || [], after: v.fixed ? 'passed' : 'not proven', evidence: `https://github.com/MajjiR/dare-board/tree/main/runs/${v.target}` };
+  });
+}
 function board() {
   const players = {};
   for (const d of dares) { const p = (players[d.player] ||= { player: d.player, points: 0, confirmed: 0, rejected: 0, inconclusive: 0, pending: 0 }); p.points += d.points || 0; if (p[d.status] !== undefined) p[d.status]++; else p.pending++; }
   const apps = APPS.map((a) => { const ds = dares.filter((d) => d.app === a.name); return { name: a.name, live: a.live, repo: a.clone ? a.repo : null, bugs: ds.filter((d) => d.status === 'confirmed').length, survived: ds.filter((d) => d.status === 'rejected').length, dares: ds.length }; });
-  return { players: Object.values(players).sort((a, b) => b.points - a.points), apps: apps.sort((a, b) => b.bugs - a.bugs), dares: [...dares].reverse(), busy: running + queue.length, catalog: readJ('catalog/kane-top-10.json', []), index: indexStats() };
+  return { players: Object.values(players).sort((a, b) => b.points - a.points), apps: apps.sort((a, b) => b.bugs - a.bugs), dares: [...dares].reverse(), busy: running + queue.length, catalog: readJ('catalog/kane-top-10.json', []), index: indexStats(), fixes: fixes(), sample: readJ('data/index.json', []).filter((o) => o.home_status === 200 && o.unknown_path_status === 404).slice(0, 14) };
 }
 
 const [cmd] = process.argv.slice(2);
