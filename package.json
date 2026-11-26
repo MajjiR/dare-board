@@ -1,0 +1,10 @@
+{
+  "name": "f5",
+  "version": "0.1.0",
+  "description": "Press refresh on an app someone else shipped. Kane CLI proves what breaks, a coding agent fixes the repo, Kane re-checks.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "f5": "f5.mjs" },
+  "scripts": { "sweep": "node f5.mjs sweep", "loop": "node f5.mjs run", "report": "node f5.mjs report" },
+  "engines": { "node": ">=20" }
+}
