@@ -20,6 +20,9 @@ Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps tested are
 read-only HTTP check. It is the pool the board draws from. It now holds 294 repos; only 8 of them are on the
 board so far, and the index check is plain HTTP, not Kane.
 
+[`FIELD.md`](FIELD.md) runs the same HTTP check over this hackathon's own entries that
+list a live URL.
+
 ## The catalog
 
 [`catalog/kane-top-10.json`](catalog/kane-top-10.json) is a list of ten mistakes AI-built

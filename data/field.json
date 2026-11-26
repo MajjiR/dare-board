@@ -1,0 +1,434 @@
+[
+ {
+  "repo": "t1dem/proofed",
+  "repo_url": "https://github.com/t1dem/proofed",
+  "live": "https://proofed.neptunescodm.workers.dev",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T18:09:57.365861+00:00"
+ },
+ {
+  "repo": "QiRifky/verify-on-save",
+  "repo_url": "https://github.com/QiRifky/verify-on-save",
+  "live": "https://verify-on-save.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.270207+00:00"
+ },
+ {
+  "repo": "lidxgoesgiri/niarva",
+  "repo_url": "https://github.com/lidxgoesgiri/niarva",
+  "live": "https://niarva.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.288694+00:00"
+ },
+ {
+  "repo": "ahmardchain/Botproof",
+  "repo_url": "https://github.com/ahmardchain/Botproof",
+  "live": "https://brewbot-botproof.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:56.975154+00:00"
+ },
+ {
+  "repo": "suvo-sos/agent-degree",
+  "repo_url": "https://github.com/suvo-sos/agent-degree",
+  "live": "https://agent-degree-kappa.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.883852+00:00"
+ },
+ {
+  "repo": "esteexbt/handoff",
+  "repo_url": "https://github.com/esteexbt/handoff",
+  "live": "https://handoffcli.vercel.app",
+  "home_status": 402,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T18:09:57.089133+00:00"
+ },
+ {
+  "repo": "darkfallX/Errata",
+  "repo_url": "https://github.com/darkfallX/Errata",
+  "live": "https://errata-nine.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.438545+00:00"
+ },
+ {
+  "repo": "aimanmalib/bumpproof",
+  "repo_url": "https://github.com/aimanmalib/bumpproof",
+  "live": "https://aimanmalib.github.io/bumpproof",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.946260+00:00"
+ },
+ {
+  "repo": "miracle352/statute",
+  "repo_url": "https://github.com/miracle352/statute",
+  "live": "https://statute-production.up.railway.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.624577+00:00"
+ },
+ {
+  "repo": "gsoffmarket/recast",
+  "repo_url": "https://github.com/gsoffmarket/recast",
+  "live": "https://recast-sooty.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.894484+00:00"
+ },
+ {
+  "repo": "MSAbhishek22/proofbench",
+  "repo_url": "https://github.com/MSAbhishek22/proofbench",
+  "live": "https://proofbench-xi.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.428653+00:00"
+ },
+ {
+  "repo": "Guzman0/DappSentinel",
+  "repo_url": "https://github.com/Guzman0/DappSentinel",
+  "live": "https://dappsentinel.netlify.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.163323+00:00"
+ },
+ {
+  "repo": "KaranSinghBisht/kane-judge",
+  "repo_url": "https://github.com/KaranSinghBisht/kane-judge",
+  "live": "https://kane-judge.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:56.997823+00:00"
+ },
+ {
+  "repo": "KingClaszzz/reconpilot",
+  "repo_url": "https://github.com/KingClaszzz/reconpilot",
+  "live": "https://reconpilot-six.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T18:09:58.135520+00:00"
+ },
+ {
+  "repo": "BernardOnuh/checkoutguard",
+  "repo_url": "https://github.com/BernardOnuh/checkoutguard",
+  "live": "https://checkoutguard-eight.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.333692+00:00"
+ },
+ {
+  "repo": "mso-docs/proofline",
+  "repo_url": "https://github.com/mso-docs/proofline",
+  "live": "https://mso-docs.github.io/proofline",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.612607+00:00"
+ },
+ {
+  "repo": "0xrard/tenantfence",
+  "repo_url": "https://github.com/0xrard/tenantfence",
+  "live": "https://tenantfence.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.243206+00:00"
+ },
+ {
+  "repo": "margarinx2000/proofloop-invoicedesk",
+  "repo_url": "https://github.com/margarinx2000/proofloop-invoicedesk",
+  "live": "https://margarinx2000.github.io/proofloop-invoicedesk",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.612302+00:00"
+ },
+ {
+  "repo": "ShalyX/proseproof",
+  "repo_url": "https://github.com/ShalyX/proseproof",
+  "live": "https://shalyx.github.io/proseproof",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.935759+00:00"
+ },
+ {
+  "repo": "mrnetwork0001/Driftor",
+  "repo_url": "https://github.com/mrnetwork0001/Driftor",
+  "live": "https://trydriftor.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.299944+00:00"
+ },
+ {
+  "repo": "Adwaitbytes/theseus",
+  "repo_url": "https://github.com/Adwaitbytes/theseus",
+  "live": "https://theseus-umber.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.852373+00:00"
+ },
+ {
+  "repo": "Big-BenW3/Blomp",
+  "repo_url": "https://github.com/Big-BenW3/Blomp",
+  "live": "https://blomp.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.262839+00:00"
+ },
+ {
+  "repo": "N-45div/Tickmark",
+  "repo_url": "https://github.com/N-45div/Tickmark",
+  "live": "https://tickmark-invoices.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.614816+00:00"
+ },
+ {
+  "repo": "XDGram/GREENLIGHT",
+  "repo_url": "https://github.com/XDGram/GREENLIGHT",
+  "live": "https://greenlight-demo-shop.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.610849+00:00"
+ },
+ {
+  "repo": "hempun10/hearloop",
+  "repo_url": "https://github.com/hempun10/hearloop",
+  "live": "https://hearloop.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.860289+00:00"
+ },
+ {
+  "repo": "yohunshadow/shipgate",
+  "repo_url": "https://github.com/yohunshadow/shipgate",
+  "live": "https://shipgate-brew-bar.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:57.777889+00:00"
+ },
+ {
+  "repo": "Maheswar-Sah00/bumpgate",
+  "repo_url": "https://github.com/Maheswar-Sah00/bumpgate",
+  "live": "https://maheswar-sah00.github.io/bumpgate",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.477316+00:00"
+ },
+ {
+  "repo": "Mestarkris/mlyfo",
+  "repo_url": "https://github.com/Mestarkris/mlyfo",
+  "live": "https://mlyfo.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.431815+00:00"
+ },
+ {
+  "repo": "ilhamraduanbis-source/kanecli-proofsafe-2026",
+  "repo_url": "https://github.com/ilhamraduanbis-source/kanecli-proofsafe-2026",
+  "live": "https://kanecli-proofsafe-2026.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.665696+00:00"
+ },
+ {
+  "repo": "GunroarCannon/pathproof",
+  "repo_url": "https://github.com/GunroarCannon/pathproof",
+  "live": "https://pathproof-umber.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.712143+00:00"
+ },
+ {
+  "repo": "Sanchay117/stranger",
+  "repo_url": "https://github.com/Sanchay117/stranger",
+  "live": "https://stranger-2yf3.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.059771+00:00"
+ },
+ {
+  "repo": "Techkeyy/workers",
+  "repo_url": "https://github.com/Techkeyy/workers",
+  "live": "https://workers-port.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.300150+00:00"
+ },
+ {
+  "repo": "guosongyi427-creator/shipcheck",
+  "repo_url": "https://github.com/guosongyi427-creator/shipcheck",
+  "live": "https://www.kaneclihack.sh",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.665960+00:00"
+ },
+ {
+  "repo": "eminentcodes/latch",
+  "repo_url": "https://github.com/eminentcodes/latch",
+  "live": "https://latchtst.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.666474+00:00"
+ },
+ {
+  "repo": "SudeepGowda55/deadheat",
+  "repo_url": "https://github.com/SudeepGowda55/deadheat",
+  "live": "https://dead-heat-nine.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.717195+00:00"
+ },
+ {
+  "repo": "AK-Lmn/Intindi-Hackathon",
+  "repo_url": "https://github.com/AK-Lmn/Intindi-Hackathon",
+  "live": "https://intindi-hackathon.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.185499+00:00"
+ },
+ {
+  "repo": "prathamxeth/ShipProof",
+  "repo_url": "https://github.com/prathamxeth/ShipProof",
+  "live": "https://ship-proof-theta.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T18:09:58.184179+00:00"
+ },
+ {
+  "repo": "ibnweb3/cartwalk",
+  "repo_url": "https://github.com/ibnweb3/cartwalk",
+  "live": "https://ibnweb3.github.io/cartwalk",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.011785+00:00"
+ },
+ {
+  "repo": "pisuthd/wayfind-swarm",
+  "repo_url": "https://github.com/pisuthd/wayfind-swarm",
+  "live": "https://wayfind.click",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:10:00.070762+00:00"
+ },
+ {
+  "repo": "mukilanmuthuvalathan/flowpatch",
+  "repo_url": "https://github.com/mukilanmuthuvalathan/flowpatch",
+  "live": "https://flowwpatchcli.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T18:09:58.287594+00:00"
+ },
+ {
+  "repo": "CyberwarriorAtt/forge-kane-loop",
+  "repo_url": "https://github.com/CyberwarriorAtt/forge-kane-loop",
+  "live": "https://forge-kane-loop.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.712199+00:00"
+ },
+ {
+  "repo": "alejoetienne/financilab-chequeo-estafas",
+  "repo_url": "https://github.com/alejoetienne/financilab-chequeo-estafas",
+  "live": "https://alejoetienne.github.io/financilab-chequeo-estafas",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.187884+00:00"
+ },
+ {
+  "repo": "ohjay-official/receipt",
+  "repo_url": "https://github.com/ohjay-official/receipt",
+  "live": "https://receipt-taupe-one.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.973670+00:00"
+ },
+ {
+  "repo": "harrymove-ctrl/pinflow",
+  "repo_url": "https://github.com/harrymove-ctrl/pinflow",
+  "live": "https://harrymove-ctrl.github.io/pinflow",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.315992+00:00"
+ },
+ {
+  "repo": "Pizzylee001/ClaimCheck",
+  "repo_url": "https://github.com/Pizzylee001/ClaimCheck",
+  "live": "https://claimcheck-nu.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T18:09:59.553233+00:00"
+ },
+ {
+  "repo": "Shine-5705/proofline",
+  "repo_url": "https://github.com/Shine-5705/proofline",
+  "live": "https://shine-5705.github.io/proofline",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:59.711824+00:00"
+ },
+ {
+  "repo": "vaibhav4046/shipcheck",
+  "repo_url": "https://github.com/vaibhav4046/shipcheck",
+  "live": "https://shipcheck-eta.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "host 404 on unknown paths",
+  "checked": "2026-11-26T18:09:58.999509+00:00"
+ },
+ {
+  "repo": "PhiBao/reenact",
+  "repo_url": "https://github.com/PhiBao/reenact",
+  "live": "https://reenact-kane.fly.dev",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T18:10:01.711452+00:00"
+ }
+]
