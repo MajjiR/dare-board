@@ -1,0 +1,92 @@
+{
+  "target": "nido-erp",
+  "repo": "thenameisshambhulinga/ERP-Platform-",
+  "commit": "635c59c7ba900487341ce55b9d0028abf5ab809e",
+  "live": "https://nido-phase-4.vercel.app",
+  "host": "vercel",
+  "route": "/login",
+  "check_sha256": "11a9bd62068c8f9b3424c255475abefbf59333d6441fd334a3d1001155e2d3b1",
+  "started": "2026-11-26T16:00:04.031Z",
+  "rounds": [
+    {
+      "round": 1,
+      "agent": "claude",
+      "unavailable": true,
+      "files": [],
+      "check_untouched": true,
+      "kane": {
+        "status": "skipped",
+        "summary": "agent unavailable"
+      }
+    },
+    {
+      "round": 2,
+      "agent": "codex",
+      "files": [
+        "vercel.json"
+      ],
+      "check_untouched": true,
+      "kane": {
+        "code": 1,
+        "status": "failed",
+        "summary": "Opening the root address led to the app's login screen. The test still treated that page as a missing home page instead of accounting for the unauthenticated starting state.\nUpdate the test to treat the login screen as the expected unauthenticated entry state, or establish a signed-in session before asserting protected home-page content. Then navigate directly to /login and verify that same sign-in form is displayed.",
+        "reason": "Checkpoint assertion failed: \"the app's home page loads with real content\"",
+        "duration": 38.6,
+        "file": "runs/nido-erp/04-round2-kane-recheck.ndjson",
+        "host_log": {
+          "requested": 0,
+          "statuses": [],
+          "ok": false
+        },
+        "kane_status": "failed"
+      }
+    },
+    {
+      "round": 3,
+      "agent": "codex",
+      "files": [
+        "vercel.json"
+      ],
+      "check_untouched": true,
+      "kane": {
+        "code": 1,
+        "status": "failed",
+        "summary": "Opening the root address led to /login, where a working sign-in form was shown. The test assumed that an unauthenticated visitor would remain on a separate home page, so its first check did not match the page state.\nUpdate the test to expect the sign-in page after opening the root address when no session exists, or establish an authenticated session before checking authenticated home-page content.",
+        "reason": "Checkpoint assertion failed: \"the app's home page loads with real content\"",
+        "duration": 30.9,
+        "file": "runs/nido-erp/04-round3-kane-recheck.ndjson",
+        "host_log": {
+          "requested": 0,
+          "statuses": [],
+          "ok": false
+        },
+        "kane_status": "failed"
+      }
+    }
+  ],
+  "live_result": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The deployed site does not serve the login page when someone opens the login address directly, so the host returns its missing-page screen before the app can show the sign-in form.\nConfigure the deployment to serve the app entry point for `/login` on direct requests, then verify that opening or refreshing `https://nido-phase-4.vercel.app/login` displays the sign-in form rather than the host error page.\nevidence: network_failure: GET https://nido-phase-4.vercel.app/login -> 404\nevidence: console_error: Failed to load resource: the server responded with a status of 404 ()",
+    "reason": "The exact requested URL loaded a Vercel 404 NOT_FOUND page instead of a sign-in form.",
+    "duration": 51.8,
+    "file": "runs/nido-erp/01-kane-live.ndjson"
+  },
+  "local_before": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The check assumed that opening the home address would display a home page. The browser was redirected to the login screen, so that expected state was not present.\nUpdate the test to either authenticate before checking protected home content or accept the login redirect as the expected result for an unauthenticated visitor.",
+    "reason": "Checkpoint assertion failed: \"the app's home page loads with real content\"",
+    "duration": 36.5,
+    "file": "runs/nido-erp/02-kane-local-before.ndjson",
+    "host_log": {
+      "requested": 0,
+      "statuses": [],
+      "ok": false
+    },
+    "kane_status": "failed"
+  },
+  "fixed": false,
+  "verdict": "not fixed",
+  "finished": "2026-11-26T16:05:07.540Z"
+}
