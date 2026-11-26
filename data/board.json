@@ -40,7 +40,16 @@
   "player": "house",
   "app": "kairos",
   "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
-  "status": "running"
+  "status": "inconclusive",
+  "kane": {
+   "status": "failed",
+   "reason": "Final verification failed: \"The reported bug is really present: navigating to /this-page-does-not-exist shows the raw error page of the host instead of the app's own not-found page with a way back home.\"",
+   "summary": "The test treated the report as already proven and asserted that a host error page was visible. The available evidence instead shows the app was served at the invalid address: the request returned 200 and the screenshot shows the Kairos home page.\nUpdate the test to inspect the actual page after the invalid URL and fail only when a genuine host error page is visible. If the intended behavior is a dedicated not-found screen, write a separate requirement for that rather than asserting the visitor report is already true.",
+   "duration": 101.2,
+   "file": "data/kane/mwxud8xzedfe.ndjson"
+  },
+  "points": 0,
+  "finished": "2026-11-26T17:48:24.547Z"
  },
  {
   "id": "mwxud8yvbgrf",
@@ -48,6 +57,6 @@
   "player": "house",
   "app": "financial-compass",
   "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
-  "status": "queued"
+  "status": "running"
  }
 ]
