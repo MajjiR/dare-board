@@ -1,0 +1,59 @@
+{
+  "target": "nido-erp",
+  "repo": "thenameisshambhulinga/ERP-Platform-",
+  "commit": "635c59c7ba900487341ce55b9d0028abf5ab809e",
+  "live": "https://nido-phase-4.vercel.app",
+  "host": "vercel",
+  "route": "/login",
+  "check_sha256": "11a9bd62068c8f9b3424c255475abefbf59333d6441fd334a3d1001155e2d3b1",
+  "started": "2026-11-26T15:53:09.668Z",
+  "rounds": [
+    {
+      "round": 1,
+      "agent": "claude",
+      "files": [],
+      "check_untouched": true,
+      "kane": {
+        "code": 1,
+        "status": "failed",
+        "summary": "The site host does not serve the application for the /login address, so it returns its own not-found page before the sign-in screen can appear.\nConfigure the site host to return the application for direct visits to /login and other app routes, then verify that refreshing /login still displays the sign-in form.\nevidence: http_error_response: GET http://127.0.0.1:4704/login -> 404 body: <!doctype html><title>404: NOT_FOUND</title><h1>404: NOT_FOUND</h1><p>Code:\nevidence: console_error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "reason": "Direct navigation returned a 404: NOT_FOUND host error instead of the required login screen.",
+        "duration": 35.1,
+        "file": "runs/nido-erp/04-round1-kane-recheck.ndjson"
+      }
+    },
+    {
+      "round": 2,
+      "agent": "claude",
+      "files": [],
+      "check_untouched": true,
+      "kane": {
+        "code": 0,
+        "status": "passed",
+        "summary": "Opened the app’s login page as requested.\nThe page displayed a Sign In form with email and password fields and a Sign In button.\nThe login page loaded successfully without a 404 or page-not-found message.",
+        "reason": "Objective completed",
+        "duration": 94.7,
+        "file": "runs/nido-erp/04-round2-kane-recheck.ndjson"
+      }
+    }
+  ],
+  "live_result": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The test assumed that opening the site root would leave the browser on a home page. It instead arrived at the login page, and the agent did not stop to record or evaluate the required starting-page result. The later error-page check was therefore evaluated against the wrong test state.\nUpdate the test to explicitly check the initial page immediately after loading the root URL. If an unauthenticated redirect to login is expected, make that expectation explicit, then separately load /login and assert the sign-in form and absence of host-error text.",
+    "reason": "Required starting-page checkpoint was not evaluated before navigation and subsequent error-absence checks returned false.",
+    "duration": 67,
+    "file": "runs/nido-erp/01-kane-live.ndjson"
+  },
+  "local_before": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The test opened the home address, but it was redirected to the login screen and then the run continued with the login-page navigation before checking the home-page requirement. The assertion therefore evaluated the wrong page state.\nCheck the home page immediately after opening `/` and before navigating to `/login`. If an unauthenticated redirect to login is expected, update the home-page expectation to allow that state or establish an authenticated session first.",
+    "reason": "Checkpoint assertion failed: \"the app's home page loads with real content\"",
+    "duration": 41.8,
+    "file": "runs/nido-erp/02-kane-local-before.ndjson"
+  },
+  "fixed": true,
+  "verdict": "fixed in 2 round(s)",
+  "finished": "2026-11-26T15:58:09.274Z"
+}
