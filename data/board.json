@@ -1,0 +1,53 @@
+[
+ {
+  "id": "mwxud8vrjf7l",
+  "ts": "2026-11-26T17:43:55.191Z",
+  "player": "house",
+  "app": "payloan",
+  "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
+  "status": "confirmed",
+  "kane": {
+   "status": "passed",
+   "reason": "Objective completed",
+   "summary": "Opened the requested non-existent PayLoan page as a normal visitor without signing in or submitting any information.\nConfirmed that the page shows the hosting service’s raw 404 error instead of a PayLoan-branded not-found page.\nConfirmed that the error page does not provide a visible link or button to return home.",
+   "duration": 65.6,
+   "file": "data/kane/mwxud8vrjf7l.ndjson"
+  },
+  "points": 15,
+  "first_blood": true,
+  "finished": "2026-11-26T17:45:21.543Z"
+ },
+ {
+  "id": "mwxud8wytyxj",
+  "ts": "2026-11-26T17:43:55.234Z",
+  "player": "house",
+  "app": "guest-it",
+  "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
+  "status": "inconclusive",
+  "kane": {
+   "status": "failed",
+   "reason": "Final verification failed: \"the raw error page of the host is shown instead of the own not-found page of the app with a way back home\"",
+   "summary": "After opening the made-up address, the automation waited for the \"Admin Login\" heading and its browser address became /login. The final check therefore examined the login screen rather than the invalid address.\nKeep the browser on /this-page-does-not-exist after navigation and inspect that page before any login-related wait or action. Assert the visible page content and a route-preserving URL.",
+   "duration": 57,
+   "file": "data/kane/mwxud8wytyxj.ndjson"
+  },
+  "points": 0,
+  "finished": "2026-11-26T17:46:30.330Z"
+ },
+ {
+  "id": "mwxud8xzedfe",
+  "ts": "2026-11-26T17:43:55.271Z",
+  "player": "house",
+  "app": "kairos",
+  "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
+  "status": "running"
+ },
+ {
+  "id": "mwxud8yvbgrf",
+  "ts": "2026-11-26T17:43:55.303Z",
+  "player": "house",
+  "app": "financial-compass",
+  "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
+  "status": "queued"
+ }
+]
