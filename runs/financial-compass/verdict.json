@@ -1,0 +1,76 @@
+{
+  "target": "financial-compass",
+  "repo": "sirmakau/my-financial-compass",
+  "commit": "f33952c3ee10dd3e17d824a508e189501fc75893",
+  "live": "https://my-financial-ledger.vercel.app",
+  "host": "vercel",
+  "route": "/auth",
+  "check_sha256": "11a9bd62068c8f9b3424c255475abefbf59333d6441fd334a3d1001155e2d3b1",
+  "started": "2026-11-26T16:00:03.988Z",
+  "rounds": [
+    {
+      "round": 1,
+      "agent": "claude",
+      "unavailable": true,
+      "files": [],
+      "check_untouched": true,
+      "kane": {
+        "status": "skipped",
+        "summary": "agent unavailable"
+      }
+    },
+    {
+      "round": 2,
+      "agent": "codex",
+      "files": [
+        "vercel.json"
+      ],
+      "check_untouched": true,
+      "kane": {
+        "code": 0,
+        "status": "passed",
+        "summary": "Opened the app’s shared or directly entered authentication link at http://127.0.0.1:4701/auth.\nThe app displayed its sign-in screen with an option to create an account.\nThe page loaded normally without a “404: NOT_FOUND” or “Page not found” error.",
+        "reason": "Objective completed",
+        "duration": 73.7,
+        "file": "runs/financial-compass/04-round2-kane-recheck.ndjson",
+        "host_log": {
+          "requested": 1,
+          "statuses": [
+            200
+          ],
+          "ok": true,
+          "rule": "vercel.json rewrite /(.*) -> /index.html"
+        },
+        "kane_status": "passed"
+      }
+    }
+  ],
+  "live_result": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The browser could not create a screenshot after navigation. This is a test environment problem, not proof that the website failed to load the requested page.\nRetry the run in a fresh browser session and investigate the browser or automation host screenshot capability if the capture error repeats.",
+    "reason": "navigate_node: post-nav capture failed: Error: screenshot: Protocol error (Page.captureScreenshot): Unable to capture screenshot\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n",
+    "duration": 17.1,
+    "file": "runs/financial-compass/01-kane-live.ndjson"
+  },
+  "local_before": {
+    "code": 1,
+    "status": "failed",
+    "summary": "The site is not set up to serve the app at the /auth address when someone opens that address directly or refreshes it.\nConfigure the site to serve the app’s main page for direct /auth requests, then let the app route that address to its sign-in/sign-up screen. Retest by opening and refreshing /auth directly.\nevidence: http_error_response: GET http://127.0.0.1:4701/auth -> 404 body: <!doctype html><title>404: NOT_FOUND</title><h1>404: NOT_FOUND</h1><p>Code: \nevidence: objective_contradiction: check FAILED: the page shows the app's sign-in / sign-up screen — expected: true | observed: {{sign_in_sign_up_screen_vi",
+    "reason": "Checkpoint assertion failed: \"the page shows the app's sign-in / sign-up screen\"",
+    "duration": 55.9,
+    "file": "runs/financial-compass/02-kane-local-before.ndjson",
+    "host_log": {
+      "requested": 1,
+      "statuses": [
+        404
+      ],
+      "ok": false,
+      "rule": "no vercel.json"
+    },
+    "kane_status": "failed"
+  },
+  "fixed": true,
+  "verdict": "fixed in 2 round(s)",
+  "finished": "2026-11-26T16:04:23.891Z"
+}
