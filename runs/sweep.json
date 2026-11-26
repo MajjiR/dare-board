@@ -1,0 +1,90 @@
+[
+  {
+    "name": "payloan",
+    "live": "https://payloan.vercel.app",
+    "route": "/login",
+    "home": 200,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:24.068Z"
+  },
+  {
+    "name": "financial-compass",
+    "live": "https://my-financial-ledger.vercel.app",
+    "route": "/auth",
+    "home": 200,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:24.432Z"
+  },
+  {
+    "name": "study-zen",
+    "live": "https://study-zen-vision-main.vercel.app",
+    "route": "/focus",
+    "home": 404,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:24.869Z"
+  },
+  {
+    "name": "ib-electric-store",
+    "live": "https://ib-electric-store.vercel.app",
+    "route": "/shop",
+    "home": 404,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:25.206Z"
+  },
+  {
+    "name": "nido-erp",
+    "live": "https://nido-phase-4.vercel.app",
+    "route": "/login",
+    "home": 200,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:25.546Z"
+  },
+  {
+    "name": "heal-sphere",
+    "live": "https://heal-sphere.vercel.app",
+    "route": "/login",
+    "home": 200,
+    "refresh": 404,
+    "at": "2026-11-26T16:06:26.202Z"
+  },
+  {
+    "name": "physicalmediavault",
+    "live": "https://physicalmedia.thamara.co.uk",
+    "route": "/stats",
+    "home": 200,
+    "refresh": 200,
+    "at": "2026-11-26T16:06:27.684Z"
+  },
+  {
+    "name": "scriptforge",
+    "live": "https://scriptforgeaii.lovable.app",
+    "route": "/pricing",
+    "home": 200,
+    "refresh": 200,
+    "at": "2026-11-26T16:06:29.120Z"
+  },
+  {
+    "name": "guest-it",
+    "live": "https://guest-it.vercel.app",
+    "route": "/login",
+    "home": 200,
+    "refresh": 200,
+    "at": "2026-11-26T16:06:29.962Z"
+  },
+  {
+    "name": "kairos",
+    "live": "https://kairos-website-virid.vercel.app",
+    "route": "/about",
+    "home": 200,
+    "refresh": 200,
+    "at": "2026-11-26T16:06:31.104Z"
+  },
+  {
+    "name": "careconnect",
+    "live": "https://careconnect-cuidadores.vercel.app",
+    "route": "/planos",
+    "home": 200,
+    "refresh": 200,
+    "at": "2026-11-26T16:06:31.515Z"
+  }
+]
