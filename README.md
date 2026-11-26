@@ -1,13 +1,18 @@
-# Dare Board
+# Dare Board: a Kane bug database
 
-**Dare a live AI-built app to break. Kane CLI is the judge.**
+**A bug database for AI-built apps, where every entry is a Kane test, and a board where anyone can dare a live app to break.**
 
-Pick an app that someone shipped with an AI builder. Type, in plain English, how you think
-it breaks. Kane CLI opens the live app in a real browser, tries it, and rules: real bug or
-not. Real bugs score points on a public leaderboard. For apps with a public repo, a coding
-agent takes Kane's report, fixes the repo, and Kane checks the fix.
+Each entry in the database has an ID, a plain-English test Kane CLI can run in a real
+browser, why the bug happens, and (where we have it) the known fix. When Kane matches an
+entry on your app, the coding agent already knows what to change, and Kane re-checks.
 
-Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps on the board are ours.
+This is a seed: ten entries, three run through Kane, one with a fix Kane confirmed on two
+real apps. There is no community yet; the format is what lets other people add entries.
+
+On top of it sits the Dare Board: pick a live app someone shipped with an AI builder,
+type how you think it breaks, and Kane rules. Real bugs score points.
+
+Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps tested are ours.
 
 ## The index
 
@@ -30,8 +35,8 @@ node dare.mjs audit https://your-app.example K01,K02
 ```
 
 K01, K02 and K04 have been run through Kane so far (`"exercised": true`); a recorded
-audit is in [`data/audits/payloan.vercel.app`](data/audits/payloan.vercel.app). The other
-seven are written but untested, and the list itself is our judgement, not measured frequency.
+audit is in [`data/audits/payloan.vercel.app`](data/audits/payloan.vercel.app). K01 carries a `fix` block: the
+change Codex made and Kane confirmed on two apps. The other seven are written but untested, and the list itself is our judgement, not measured frequency.
 
 ## Run it
 
