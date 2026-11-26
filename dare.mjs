@@ -19,18 +19,21 @@ const APPS = JSON.parse(fs.readFileSync(path.join(ROOT, 'targets.json'), 'utf8')
 const HOUSE = JSON.parse(fs.readFileSync(path.join(ROOT, 'checks', 'house-dares.json'), 'utf8'));
 const POINTS = { confirmed: 10, first_blood: 5 };
 
+// One Kane run at a time: parallel runs were seen landing on each other's pages.
 let dares = fs.existsSync(BOARD) ? JSON.parse(fs.readFileSync(BOARD, 'utf8')) : [];
 const save = () => fs.writeFileSync(BOARD, JSON.stringify(dares, null, 1));
 
-// The dare is a claim that something is broken. Kane is asked to assert the app is
-// CORRECT. So: Kane's assertion fails -> the bug is real. Kane passes -> dare rejected.
-// Anything else (timeout, blocked, could not find the thing) is inconclusive: no points.
+// The dare is a claim that something is broken. Kane is asked to go and see whether the
+// bug IS there. Kane passes -> it saw the bug -> real bug. An assertion fails -> the app
+// survived. Anything else (timeout, blocked, browser closed) is no ruling and no points.
+// (First version asked Kane to assert the app was correct; Kane then "passed" a run whose
+// own summary described the bug, so the question is now asked the direct way round.)
 export function objective(app, text) {
   return [
-    `A visitor claims this web app has a bug. Their claim, in their own words: "${text.replace(/"/g, "'")}"`,
-    `Reproduce what the claim describes on ${app.live} the way a normal visitor would.`,
+    `A visitor reports a bug in the web app at ${app.live} . Their report, in their own words: "${text.replace(/"/g, "'")}"`,
+    `Do what the report describes, the way a normal visitor would.`,
     `Rules: read-only. Do not sign in, do not create an account, do not submit any form that sends data, do not buy anything.`,
-    `Assert that the app behaves correctly here, meaning the claimed bug does NOT happen.`,
+    `Assert that the reported bug is really present: what the report says goes wrong does go wrong.`,
   ].join('\n');
 }
 
@@ -47,12 +50,12 @@ function kane(app, text, outFile) {
 }
 
 export function verdict(k) {
-  if (k.status === 'passed') return 'rejected';
-  if (k.status === 'failed' && /assertion/i.test(k.reason)) return 'confirmed';
+  if (k.status === 'passed') return 'confirmed';
+  if (k.status === 'failed' && /assertion/i.test(k.reason)) return 'rejected';
   return 'inconclusive';
 }
 
-const queue = []; let running = 0; const MAX = Number(process.env.DARE_PARALLEL || 4);
+const queue = []; let running = 0; const MAX = Number(process.env.DARE_PARALLEL || 1);
 function pump() {
   while (running < MAX && queue.length) {
     const d = queue.shift(); running++; d.status = 'running'; save();

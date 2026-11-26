@@ -28,13 +28,13 @@ every app, as a benchmark.
 
 ## How a dare is judged
 
-A dare is a claim that something is broken. Kane is asked to assert that the app is
-**correct** ([`dare.mjs`](dare.mjs), `objective()`):
+A dare is a claim that something is broken. Kane is asked to go and see whether the bug
+is really there ([`dare.mjs`](dare.mjs), `objective()`):
 
 | Kane's result | Ruling | Points |
 |---|---|---|
-| An assertion failed | **Real bug** | 10, plus 5 for the first bug on that app |
-| Passed | App survived | 0 |
+| Passed: it saw the bug | **Real bug** | 10, plus 5 for the first bug on that app |
+| An assertion failed: the bug did not happen | App survived | 0 |
 | Timeout, blocked, no result | No ruling | 0 |
 
 Every ruling links to Kane's raw NDJSON run, committed under [`data/kane/`](data/kane).
@@ -89,8 +89,10 @@ why step 4 needs the host log to agree.
   command and only handles bugs a host config file can fix. Bugs in app code would need
   the stranger's code built, which this project does not do.
 - **Fixes are not deployed.** "Passed" means passed on the local stand-in.
-- **Kane can be wrong.** A "real bug" ruling is Kane's assertion failing once. It is not
-  replayed, and the false pass above shows the judge makes mistakes.
+- **Kane can be wrong.** A "real bug" ruling is one Kane run saying it saw the bug. It is
+  not replayed, and the false pass above shows the judge makes mistakes.
+- **One dare at a time.** Parallel Kane runs were seen landing on each other's pages, so
+  the queue runs one browser at a time. A ruling takes about a minute.
 - **Claude Code was not logged in** on the machine that made the recorded runs, so Codex
   did every fix.
 - **Small board.** 8 apps, found by searching GitHub for AI-builder repos with a live URL.
