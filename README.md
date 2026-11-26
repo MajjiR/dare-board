@@ -12,8 +12,25 @@ Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps on the boa
 ## The index
 
 [`INDEX.md`](INDEX.md) lists every live AI-built app we found, with its repo and a
-read-only HTTP check. It is the pool the board draws from. Only 8 of them are on the
+read-only HTTP check. It is the pool the board draws from. It now holds 294 repos; only 8 of them are on the
 board so far, and the index check is plain HTTP, not Kane.
+
+## The catalog
+
+[`catalog/kane-top-10.json`](catalog/kane-top-10.json) is a list of ten mistakes AI-built
+apps commonly ship with, each written as a plain-English report Kane can check. The idea
+is an OWASP-style list, but for "it works on my screen" bugs. Run it against your own app:
+
+```bash
+node dare.mjs audit https://your-app.example
+```
+
+```bash
+node dare.mjs audit https://your-app.example K01,K02
+```
+
+Only K01 and K02 have been run through Kane so far (`"exercised": true`). The other eight
+are written but untested, and the list itself is our judgement, not measured frequency.
 
 ## Run it
 

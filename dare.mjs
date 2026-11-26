@@ -103,4 +103,19 @@ if (cmd === 'house') {
     if (u.pathname === '/') { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); return res.end(fs.readFileSync(path.join(ROOT, 'public', 'index.html'))); }
     res.writeHead(404); res.end('not found');
   }).listen(4600, '127.0.0.1', () => console.log('dare board on http://127.0.0.1:4600'));
-} else console.log('usage: node dare.mjs serve | house');
+} else if (cmd === 'audit') {
+  // Run the catalog against any URL you own: node dare.mjs audit https://your-app.example [K01,K02]
+  const url = process.argv[3]; const only = (process.argv[4] || '').split(',').filter(Boolean);
+  if (!/^https?:\/\//.test(url || '')) { console.log('usage: node dare.mjs audit <url> [K01,K02,...]'); process.exit(1); }
+  const cat = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog', 'kane-top-10.json'), 'utf8')).filter((c) => !only.length || only.includes(c.id));
+  const host = new URL(url).host.replace(/[^a-z0-9.-]/gi, '_'); const dir = path.join(DATA, 'audits', host); fs.mkdirSync(dir, { recursive: true });
+  const rows = [];
+  for (const c of cat) {
+    process.stdout.write(`${c.id} ${c.name} ... `);
+    const k = await kane({ live: url }, c.report, path.join(dir, c.id + '.ndjson'));
+    const v = verdict(k); rows.push({ id: c.id, name: c.name, result: v === 'confirmed' ? 'FOUND' : v === 'rejected' ? 'clean' : 'no ruling', kane: k, evidence: `data/audits/${host}/${c.id}.ndjson` });
+    console.log(rows.at(-1).result);
+  }
+  fs.writeFileSync(path.join(dir, 'audit.json'), JSON.stringify({ url, at: new Date().toISOString(), rows }, null, 1));
+  console.log(`\n${rows.filter((r) => r.result === 'FOUND').length} of ${rows.length} catalog mistakes found on ${url}. Details: data/audits/${host}/audit.json`);
+} else console.log('usage: node dare.mjs serve | house | audit <url> [ids]');
