@@ -9,6 +9,12 @@ agent takes Kane's report, fixes the repo, and Kane checks the fix.
 
 Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps on the board are ours.
 
+## The index
+
+[`INDEX.md`](INDEX.md) lists every live AI-built app we found, with its repo and a
+read-only HTTP check. It is the pool the board draws from. Only 8 of them are on the
+board so far, and the index check is plain HTTP, not Kane.
+
 ## Run it
 
 Needs Node 20+ and `kane-cli` (logged in). No dependencies to install.

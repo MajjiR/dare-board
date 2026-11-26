@@ -1,0 +1,282 @@
+[
+ {
+  "repo": "ruvnet/symbolic-scribe",
+  "repo_url": "https://github.com/ruvnet/symbolic-scribe",
+  "live": "https://ruv.io",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.350293Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "miacycle/miacycle.github.io",
+  "repo_url": "https://github.com/miacycle/miacycle.github.io",
+  "live": "https://miacycle.github.io",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:44.754386Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "oxBinaryBrain/Portfoilo_v3",
+  "repo_url": "https://github.com/oxBinaryBrain/Portfoilo_v3",
+  "live": "https://portfoliov3-puce.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:44.407145Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "3h0ll7/scriptforge-ai",
+  "repo_url": "https://github.com/3h0ll7/scriptforge-ai",
+  "live": "https://scriptforgeaii.lovable.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.309007Z",
+  "on_dare_board": "scriptforge"
+ },
+ {
+  "repo": "CarefreeAnil/IfcGraphViewer",
+  "repo_url": "https://github.com/CarefreeAnil/IfcGraphViewer",
+  "live": "https://ifcgraphviewer.onrender.com",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:44.930266Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "Arbab-Mustafa/Payloan",
+  "repo_url": "https://github.com/Arbab-Mustafa/Payloan",
+  "live": "https://payloan.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:44.301434Z",
+  "on_dare_board": "payloan"
+ },
+ {
+  "repo": "karthik558/GuestIT-Portal",
+  "repo_url": "https://github.com/karthik558/GuestIT-Portal",
+  "live": "https://guest-it.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:44.270350Z",
+  "on_dare_board": "guest-it"
+ },
+ {
+  "repo": "thamarakandabada/physicalmediavault",
+  "repo_url": "https://github.com/thamarakandabada/physicalmediavault",
+  "live": "https://physicalmedia.thamara.co.uk",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.314651Z",
+  "on_dare_board": "physicalmediavault"
+ },
+ {
+  "repo": "sirmakau/my-financial-compass",
+  "repo_url": "https://github.com/sirmakau/my-financial-compass",
+  "live": "https://my-financial-ledger.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:44.709717Z",
+  "on_dare_board": "financial-compass"
+ },
+ {
+  "repo": "perryraskin/release-notes-by-ai",
+  "repo_url": "https://github.com/perryraskin/release-notes-by-ai",
+  "live": "https://release-notes-by-ai.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.993872Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "itzdineshx/Pick_Me_A",
+  "repo_url": "https://github.com/itzdineshx/Pick_Me_A",
+  "live": "https://pickmea.netlify.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:45.981469Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "thenameisshambhulinga/ERP-Platform-",
+  "repo_url": "https://github.com/thenameisshambhulinga/ERP-Platform-",
+  "live": "https://nido-phase-4.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:45.249926Z",
+  "on_dare_board": "nido-erp"
+ },
+ {
+  "repo": "pawaspy/VitaReach",
+  "repo_url": "https://github.com/pawaspy/VitaReach",
+  "live": "https://heal-sphere.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:45.245609Z",
+  "on_dare_board": "heal-sphere"
+ },
+ {
+  "repo": "yenom4/Kairos-website",
+  "repo_url": "https://github.com/yenom4/Kairos-website",
+  "live": "https://kairos-website-virid.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.310242Z",
+  "on_dare_board": "kairos"
+ },
+ {
+  "repo": "yasirarafaat1/portfolio-main",
+  "repo_url": "https://github.com/yasirarafaat1/portfolio-main",
+  "live": "https://yasir-arafaat.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:45.511849Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "tomydel45-glitch/raicesbahiablanca",
+  "repo_url": "https://github.com/tomydel45-glitch/raicesbahiablanca",
+  "live": "https://raices-bahia-blanca.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:46.357542Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "saisrinivas77/Smart-Study-Planner",
+  "repo_url": "https://github.com/saisrinivas77/Smart-Study-Planner",
+  "live": "https://smart-study-planner-three.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:46.019941Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "prajwal07-pro/study-zen-vision-main",
+  "repo_url": "https://github.com/prajwal07-pro/study-zen-vision-main",
+  "live": "https://study-zen-vision-main.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:45.620088Z",
+  "on_dare_board": "study-zen"
+ },
+ {
+  "repo": "maalikzohaib/ib-electric-store",
+  "repo_url": "https://github.com/maalikzohaib/ib-electric-store",
+  "live": "https://ib-electric-store.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:45.621940Z",
+  "on_dare_board": "ib-electric-store"
+ },
+ {
+  "repo": "gsm-fullweb/careconnect",
+  "repo_url": "https://github.com/gsm-fullweb/careconnect",
+  "live": "https://careconnect-cuidadores.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:45.831482Z",
+  "on_dare_board": "careconnect"
+ },
+ {
+  "repo": "amo-tech-ai/prompt-sculptor-49",
+  "repo_url": "https://github.com/amo-tech-ai/prompt-sculptor-49",
+  "live": "https://amoai.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:45.720603Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "VikasGoyankain/mywebsite",
+  "repo_url": "https://github.com/VikasGoyankain/mywebsite",
+  "live": "https://v0-law-student-landing-page-vikas-goyankas-projects.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:49.005012Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "SankrityaT/InstaCare",
+  "repo_url": "https://github.com/SankrityaT/InstaCare",
+  "live": "https://instant-waitwise.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:47.182172Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "OtienoBryan/spares_client",
+  "repo_url": "https://github.com/OtienoBryan/spares_client",
+  "live": "https://spares-eight.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:47.232044Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "NicheUX-DesignStudio/thevaki-balakrishnan-portfolio",
+  "repo_url": "https://github.com/NicheUX-DesignStudio/thevaki-balakrishnan-portfolio",
+  "live": "https://thevaki-balakrishnan-portfolio.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 404,
+  "verdict": "breaks on refresh or shared link (host 404)",
+  "checked": "2026-11-26T17:49:47.031488Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "JatinxKumar/Campus-Connect-Hub",
+  "repo_url": "https://github.com/JatinxKumar/Campus-Connect-Hub",
+  "live": "https://campus-connect-hub-ten.vercel.app",
+  "home_status": 200,
+  "unknown_path_status": 200,
+  "verdict": "host serves the app for unknown paths",
+  "checked": "2026-11-26T17:49:47.871284Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "ITSMEPRIYANSHUUCHAT/SOLAR_SOFT_FRONTEND",
+  "repo_url": "https://github.com/ITSMEPRIYANSHUUCHAT/SOLAR_SOFT_FRONTEND",
+  "live": "https://solar-soft-frontend.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:46.226615Z",
+  "on_dare_board": null
+ },
+ {
+  "repo": "Blackhatdawn/cryptovaultpro",
+  "repo_url": "https://github.com/Blackhatdawn/cryptovaultpro",
+  "live": "https://coinbase-love-fsocietys-projects-e0c9d9df.vercel.app",
+  "home_status": 404,
+  "unknown_path_status": 0,
+  "verdict": "down",
+  "checked": "2026-11-26T17:49:46.238407Z",
+  "on_dare_board": null
+ }
+]

@@ -57,6 +57,16 @@
   "player": "house",
   "app": "financial-compass",
   "dare": "If I type an address that does not exist, like /this-page-does-not-exist, I get the raw error page of the host instead of the own not-found page of the app with a way back home.",
-  "status": "running"
+  "status": "confirmed",
+  "kane": {
+   "status": "passed",
+   "reason": "Objective completed",
+   "summary": "Visited the financial ledger site and then opened the requested non-existent address as a normal visitor.\nConfirmed the reported issue: the address displayed a raw “404: NOT_FOUND” host error page rather than the app’s own not-found page with a way back home.\nNo sign-in, account creation, form submission, or purchase was performed.",
+   "duration": 37.1,
+   "file": "data/kane/mwxud8yvbgrf.ndjson"
+  },
+  "points": 15,
+  "first_blood": true,
+  "finished": "2026-11-26T17:49:21.764Z"
  }
 ]
