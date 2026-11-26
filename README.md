@@ -29,8 +29,9 @@ node dare.mjs audit https://your-app.example
 node dare.mjs audit https://your-app.example K01,K02
 ```
 
-Only K01 and K02 have been run through Kane so far (`"exercised": true`). The other eight
-are written but untested, and the list itself is our judgement, not measured frequency.
+K01, K02 and K04 have been run through Kane so far (`"exercised": true`); a recorded
+audit is in [`data/audits/payloan.vercel.app`](data/audits/payloan.vercel.app). The other
+seven are written but untested, and the list itself is our judgement, not measured frequency.
 
 ## Run it
 
