@@ -1,0 +1,30 @@
+{
+ "url": "https://payloan.vercel.app",
+ "at": "2026-11-26T17:55:53.754Z",
+ "rows": [
+  {
+   "id": "K02",
+   "name": "No not-found page",
+   "result": "FOUND",
+   "kane": {
+    "status": "passed",
+    "reason": "Objective completed",
+    "summary": "Visited the requested invalid PayLoan page as a normal visitor without signing in or submitting any information.\nThe page displayed the hosting service’s raw 404 error details, including a request ID.\nPayLoan’s own not-found page and a link back to the home page were not shown, confirming the reported issue.",
+    "duration": 49.8
+   },
+   "evidence": "data/audits/payloan.vercel.app/K02.ndjson"
+  },
+  {
+   "id": "K04",
+   "name": "Builder placeholder branding left in",
+   "result": "clean",
+   "kane": {
+    "status": "failed",
+    "reason": "Final verification failed: \"The browser tab title or the visible page shows builder placeholder text such as 'Lovable', 'Vite + React' or 'vite_react_shadcn_ts' instead of the app's own name.\"",
+    "summary": "The run treated the visitor's allegation as something that had to be true. The loaded home page instead identifies itself as LendWise, so the reported placeholder text was not reproduced.\nUpdate the check to inspect the actual browser title and visible page text, and mark the report unreproduced when none of the listed placeholder strings appears.",
+    "duration": 37.7
+   },
+   "evidence": "data/audits/payloan.vercel.app/K04.ndjson"
+  }
+ ]
+}
