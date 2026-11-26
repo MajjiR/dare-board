@@ -51,7 +51,7 @@ function kane(app, text, outFile) {
 
 export function verdict(k) {
   if (k.status === 'passed') return 'confirmed';
-  if (k.status === 'failed' && /assertion/i.test(k.reason)) return 'rejected';
+  if (k.status === 'failed' && /assertion|verification failed/i.test(k.reason)) return 'rejected';
   return 'inconclusive';
 }
 
