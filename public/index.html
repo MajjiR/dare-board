@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dare Board</title>
+<style>
+  :root { --bg:#f6f5f1; --card:#fff; --ink:#1b1b1f; --mute:#6b6b76; --line:#e3e1da; --red:#c8352b; --green:#1f7a4d; --amber:#a86a00; --accent:#2b3fd6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121216; --card:#1c1c22; --ink:#ededf0; --mute:#9a9aa8; --line:#2c2c35; --red:#ff7468; --green:#5ed39a; --amber:#f0b54a; --accent:#8fa0ff; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; }
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  h1 { font-size:34px; margin:0 0 4px; letter-spacing:-.02em; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:0 0 10px; }
+  p.lead { color:var(--mute); margin:0 0 22px; max-width:62ch; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; } @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+  form { display:grid; grid-template-columns:160px 220px 1fr auto; gap:8px; } @media (max-width:760px) { form { grid-template-columns:1fr; } }
+  input, select, button { font:inherit; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--ink); min-width:0; }
+  button { background:var(--accent); color:#fff; border-color:transparent; font-weight:600; cursor:pointer; } @media (prefers-color-scheme: dark) { button { color:#111; } }
+  table { width:100%; border-collapse:collapse; } th, td { text-align:left; padding:7px 6px; border-bottom:1px solid var(--line); vertical-align:top; } th { font-size:12px; color:var(--mute); font-weight:600; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; } tr:last-child td { border-bottom:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:700; padding:2px 8px; border-radius:99px; border:1px solid currentColor; white-space:nowrap; }
+  .confirmed { color:var(--red); } .rejected { color:var(--green); } .inconclusive, .queued, .running { color:var(--amber); }
+  .dare { padding:12px 0; border-bottom:1px solid var(--line); } .dare:last-child { border-bottom:0; }
+  .dare q { font-weight:600; } .meta { color:var(--mute); font-size:13px; } .kane { margin-top:6px; font-size:13.5px; white-space:pre-wrap; overflow-wrap:anywhere; }
+  a { color:var(--accent); } .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dare Board</h1>
+  <p class="lead">Pick a live app someone built with an AI tool. Say, in plain English, how you think it breaks. Kane CLI tries it in a real browser and decides. A real bug is 10 points, 5 more for the first bug on an app.</p>
+
+  <div class="card">
+    <h2>Dare an app</h2>
+    <form id="f">
+      <input id="player" placeholder="Your name" required maxlength="30">
+      <select id="app" required></select>
+      <input id="dare" placeholder="e.g. If I open the pricing link in a new tab I get a 404" required maxlength="400">
+      <button>Dare</button>
+    </form>
+    <div class="meta" style="margin-top:8px">Read-only: Kane will not sign in, submit data or buy anything. <span id="busy"></span></div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h2>Players</h2><div class="wrap"><table id="players"></table></div></div>
+    <div class="card"><h2>Apps</h2><div class="wrap"><table id="apps"></table></div></div>
+  </div>
+
+  <div class="card"><h2>Dares, newest first</h2><div id="dares"></div></div>
+</main>
+<script>
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const label = { confirmed: 'REAL BUG', rejected: 'APP SURVIVED', inconclusive: 'NO RULING', queued: 'QUEUED', running: 'KANE IS TRYING' };
+let filled = false;
+async function load() {
+  const b = await (await fetch('/api/board')).json();
+  if (!filled) { document.getElementById('app').innerHTML = b.apps.map((a) => `<option value="${esc(a.name)}">${esc(a.name)}</option>`).join(''); filled = true; }
+  document.getElementById('busy').textContent = b.busy ? `Kane is working on ${b.busy} dare(s).` : '';
+  document.getElementById('players').innerHTML = '<tr><th>#</th><th>Player</th><th class="n">Points</th><th class="n">Real bugs</th><th class="n">Rejected</th></tr>' +
+    (b.players.map((p, i) => `<tr><td>${i + 1}</td><td>${esc(p.player)}</td><td class="n"><b>${p.points}</b></td><td class="n">${p.confirmed}</td><td class="n">${p.rejected}</td></tr>`).join('') || '<tr><td colspan="5" class="meta">No dares yet.</td></tr>');
+  document.getElementById('apps').innerHTML = '<tr><th>App</th><th class="n">Bugs found</th><th class="n">Dares survived</th><th>Repo</th></tr>' +
+    b.apps.map((a) => `<tr><td><a href="${esc(a.live)}" target="_blank" rel="noopener">${esc(a.name)}</a></td><td class="n"><b>${a.bugs}</b></td><td class="n">${a.survived}</td><td>${a.repo ? 'public, fixable' : 'link only'}</td></tr>`).join('');
+  document.getElementById('dares').innerHTML = b.dares.map((d) => `<div class="dare"><span class="tag ${d.status}">${label[d.status] || d.status}</span> <q>${esc(d.dare)}</q>
+    <div class="meta">${esc(d.player)} dared <b>${esc(d.app)}</b>${d.points ? ` · +${d.points} points${d.first_blood ? ' (first bug on this app)' : ''}` : ''}${d.kane ? ` · <a href="/${esc(d.kane.file)}" target="_blank">Kane's raw run</a>` : ''}</div>
+    ${d.kane?.summary ? `<div class="kane">${esc(d.kane.summary.split('\nevidence:')[0])}</div>` : ''}</div>`).join('') || '<div class="meta">Nothing yet. Be the first.</div>';
+}
+document.getElementById('f').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const body = { player: player.value, app: app.value, dare: dare.value };
+  await fetch('/api/dare', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+  dare.value = ''; load();
+});
+load(); setInterval(load, 2500);
+</script>
+</body>
+</html>
