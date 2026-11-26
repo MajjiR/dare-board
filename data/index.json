@@ -15,7 +15,7 @@
   "live": "https://miacycle.github.io",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:44.754386Z",
   "on_dare_board": null
  },
@@ -45,7 +45,7 @@
   "live": "https://ifcgraphviewer.onrender.com",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:44.930266Z",
   "on_dare_board": null
  },
@@ -55,7 +55,7 @@
   "live": "https://payloan.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:44.301434Z",
   "on_dare_board": "payloan"
  },
@@ -85,7 +85,7 @@
   "live": "https://my-financial-ledger.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:44.709717Z",
   "on_dare_board": "financial-compass"
  },
@@ -105,7 +105,7 @@
   "live": "https://pickmea.netlify.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:45.981469Z",
   "on_dare_board": null
  },
@@ -115,7 +115,7 @@
   "live": "https://nido-phase-4.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:45.249926Z",
   "on_dare_board": "nido-erp"
  },
@@ -125,7 +125,7 @@
   "live": "https://heal-sphere.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:45.245609Z",
   "on_dare_board": "heal-sphere"
  },
@@ -155,7 +155,7 @@
   "live": "https://raices-bahia-blanca.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:46.357542Z",
   "on_dare_board": null
  },
@@ -165,7 +165,7 @@
   "live": "https://smart-study-planner-three.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:46.019941Z",
   "on_dare_board": null
  },
@@ -215,7 +215,7 @@
   "live": "https://v0-law-student-landing-page-vikas-goyankas-projects.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:49.005012Z",
   "on_dare_board": null
  },
@@ -225,7 +225,7 @@
   "live": "https://instant-waitwise.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:47.182172Z",
   "on_dare_board": null
  },
@@ -245,7 +245,7 @@
   "live": "https://thevaki-balakrishnan-portfolio.vercel.app",
   "home_status": 200,
   "unknown_path_status": 404,
-  "verdict": "breaks on refresh or shared link (host 404)",
+  "verdict": "host 404 on unknown paths",
   "checked": "2026-11-26T17:49:47.031488Z",
   "on_dare_board": null
  },
