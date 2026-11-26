@@ -14,6 +14,9 @@ type how you think it breaks, and Kane rules. Real bugs score points.
 
 Built for the KaneCLI Online Hackathon, 26 Nov 2026. None of the apps tested are ours.
 
+**Live snapshot:** https://dare-board-kappa.vercel.app (read-only; the judge itself needs
+Kane on a machine, so filing a dare works only when run locally).
+
 ## The index
 
 [`INDEX.md`](INDEX.md) lists every live AI-built app we found, with its repo and a
@@ -115,8 +118,8 @@ why step 4 needs the host log to agree.
 
 ## Limits
 
-- **Runs locally.** The board is not hosted; a public version needs a server that holds a
-  Kane login.
+- **The hosted page is a snapshot.** Filing a dare needs the local server; a public
+  judge would need a server that holds a Kane login.
 - **The dare box and the fix loop are not wired together.** The fix loop is a separate
   command and only handles bugs a host config file can fix. Bugs in app code would need
   the stranger's code built, which this project does not do.

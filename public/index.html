@@ -116,22 +116,23 @@
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const label = { confirmed: 'REAL BUG', rejected: 'SURVIVED', inconclusive: 'NO RULING', queued: 'QUEUED', running: 'KANE IS LOOKING' };
 const $ = (id) => document.getElementById(id);
-let filled = false;
+let filled = false, snapshot = false;
 async function load() {
-  let b; try { b = await (await fetch('/api/board')).json(); } catch { return; }
+  let b; try { b = await (await fetch('/api/board')).json(); } catch { try { b = await (await fetch('board.json')).json(); snapshot = true; } catch { return; } }
+  if (snapshot) { $('f').querySelector('button').disabled = true; $('busy').textContent = 'This page is a read-only snapshot. To file a dare, clone the repo and run node dare.mjs serve.'; }
   if (!filled) { $('app').innerHTML = b.apps.map((a) => `<option value="${esc(a.name)}">${esc(a.name)}</option>`).join(''); filled = true; }
   const judged = b.dares.filter((d) => ['confirmed', 'rejected', 'inconclusive'].includes(d.status)).length;
   const bugs = b.dares.filter((d) => d.status === 'confirmed').length;
   $('strip').innerHTML = [[b.index?.total ?? 0, 'live apps indexed'], [b.index?.host404 ?? 0, 'answer a host 404'], [(b.catalog || []).length, 'bugs in the database'], [judged, 'dares judged by Kane'], [bugs, 'real bugs ruled']]
     .map(([n, t]) => `<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');
-  $('busy').textContent = b.busy ? `Kane has ${b.busy} in the queue.` : '';
+  if (!snapshot) $('busy').textContent = b.busy ? `Kane has ${b.busy} in the queue.` : '';
   $('players').innerHTML = '<tr><th>#</th><th>Player</th><th class="n">Pts</th><th class="n">Bugs</th><th class="n">Missed</th></tr>' +
     (b.players.map((p, i) => `<tr class="${i === 0 && p.points ? 'lead' : ''}"><td>${String(i + 1).padStart(2, '0')}</td><td>${esc(p.player)}</td><td class="n big">${p.points}</td><td class="n">${p.confirmed}</td><td class="n">${p.rejected}</td></tr>`).join('') || '<tr><td colspan="5" class="empty">Nobody yet.</td></tr>');
   $('apps').innerHTML = '<tr><th>App</th><th class="n">Bugs</th><th class="n">Survived</th><th>Repo</th></tr>' +
     b.apps.map((a) => `<tr><td><a href="${esc(a.live)}" target="_blank" rel="noopener">${esc(a.name)}</a></td><td class="n big">${a.bugs}</td><td class="n">${a.survived}</td><td>${a.repo ? `<a href="https://github.com/${esc(a.repo)}" target="_blank" rel="noopener">public</a>` : 'link only'}</td></tr>`).join('');
   $('dares').innerHTML = b.dares.map((d) => `<div class="dare"><div><span class="tag ${d.status}">${label[d.status] || d.status}</span>${d.points ? `<span class="pts">+${d.points}</span>` : ''}</div>
     <div><blockquote>&ldquo;${esc(d.dare)}&rdquo;</blockquote>
-    <div class="meta"><b>${esc(d.player)}</b> v. <b>${esc(d.app)}</b>${d.first_blood ? ' · first bug on this app' : ''}${d.kane ? ` · <a href="/${esc(d.kane.file)}" target="_blank">raw Kane run</a>` : ''}</div>
+    <div class="meta"><b>${esc(d.player)}</b> v. <b>${esc(d.app)}</b>${d.first_blood ? ' · first bug on this app' : ''}${d.kane ? ` · <a href="${snapshot ? 'https://github.com/MajjiR/dare-board/blob/main/' : '/'}${esc(d.kane.file)}" target="_blank">raw Kane run</a>` : ''}</div>
     ${d.kane?.summary ? `<div class="ruling">${esc(d.kane.summary.split('\nevidence:')[0])}</div>` : ''}</div></div>`).join('') || '<div class="empty">Nothing filed yet.</div>';
   $('fixes').innerHTML = '<tr><th>App</th><th>Page</th><th>Kane on the live site</th><th>Agent</th><th>Changed</th><th>Kane after the fix</th><th></th></tr>' +
     (b.fixes || []).map((f) => `<tr><td><a href="https://github.com/${esc(f.repo)}" target="_blank" rel="noopener">${esc(f.repo)}</a></td><td>${esc(f.route)}</td><td class="fail">${esc(f.before)}</td><td>${esc(f.agent || '')}</td><td>${esc(f.files.join(', '))}</td><td class="${f.after === 'passed' ? 'pass' : 'warn'}">${esc(f.after)}</td><td><a href="${esc(f.evidence)}" target="_blank" rel="noopener">evidence</a></td></tr>`).join('');
@@ -145,7 +146,7 @@ $('f').addEventListener('submit', async (e) => {
   await fetch('/api/dare', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ player: $('player').value, app: $('app').value, dare: $('dare').value }) });
   $('dare').value = ''; load();
 });
-load(); setInterval(load, 2500);
+load().then(() => { if (!snapshot) setInterval(load, 2500); });
 </script>
 </body>
 </html>
